@@ -97,9 +97,9 @@ function sum(array) {
     for (i = 0; i < array.length; i++) {
       if (array[0] == 0) {
         return 0
-      } else if (typeof (array[i]) == "Object") {
+      } else if (typeof (array[i]) === "object") {
         console.log("dentro")
-        return "Unsupported data type sir or ma'am"
+        throw new Error("Unsupported data type sir or ma'am")
       }
       else if (isNaN(array[i])) {
         sumaInt = sumaInt + array[i].length
@@ -111,6 +111,7 @@ function sum(array) {
     return parseInt(sumaInt) + parseInt(sumaNum)
   }
 }
+
 
 
 
